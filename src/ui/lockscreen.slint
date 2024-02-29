@@ -1,0 +1,36 @@
+
+import { Button } from "std-widgets.slint";
+component MyButton inherits Text {
+    color: black;
+    // ...
+}
+
+export component MyApp inherits Window {
+  callback lock <=> boton1.clicked;
+  callback unlock <=> boton2.clicked;
+    preferred-width: 200px;
+    preferred-height: 100px;
+    title: "Lockscreen test";
+    Rectangle {
+        width: 200px;
+        height: 100px;
+        background: green;
+    boton1 := Button {
+      y: 0px;
+      text: "lock";}
+    boton2 := Button {
+      y: 50px;
+      text: "unlock";
+    }
+    }
+    
+    MyButton {
+        x:0;y:0;
+        text: "hello";
+    }
+    MyButton {
+        y:0;
+        x: 50px;
+        text: "world";
+    }
+}
